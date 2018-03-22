@@ -29,3 +29,29 @@ html, body{
 .location, .weather, .desc{
   font-size: 6rem;
 }
+
+.farenheit{
+  border-style: solid;
+  border-color: black;
+  background-color: white;
+  color: black;
+  text-shadow: none;
+  opacity: 0.5;
+}
+
+.farenheit:hover{
+  opacity: 1;
+}
+
+.celsius{
+  border-style: solid;
+  border-color: black;
+  background-color: #b3ecff;
+  color: black;
+  text-shadow: none;
+  opacity: 0.5;
+}
+
+.celsius:hover{
+  opacity: 1;
+}

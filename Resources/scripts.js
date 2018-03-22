@@ -12,9 +12,8 @@ var getWeatherData = function(long, lat){
     success: function(data){
       $('.location').text(data.name+", "+data.sys.country);
       temp = data.main.temp+" C";
-      $('.weather').html(data.main.temp+" &#8451;");
+      $('.weather').html(Math.trunc(data.main.temp)+" &#8451;");
       desc = data.weather[0].main.toString();
-      console.log(desc);
       $('.desc').text(data.weather[0].main);
       changeBackground(desc);
     }
@@ -50,10 +49,23 @@ var changeToCelsius = function(t){
 var changeBackground = function(descript){
   switch (descript) {
     case "Snow":
-      console.log("this works");
       $('.weatherApp').css('background-image','url(./Resources/snow.gif)');
       break;
-    default:
+    case "Clear":
+      $('.weatherApp').css('background-image','url(./Resources/sun.gif)');
+      break;
+    case "Rain":
+    $('.weatherApp').css('background-image','url(./Resources/rain.gif)');
+      break;
+    case "Thunderstorm":
+    $('.weatherApp').css('background-image','url(./Resources/thunder.gif)');
+      break;
+    case "Cloudy":
+      $('.weatherApp').css('background-image','url(./Resources/cloudy.gif)');
+      break;
+    case "Drizzle":
+      $('.weatherApp').css('background-image','url(./Resources/rain.gif)');
+      break;
 
   }
 }
